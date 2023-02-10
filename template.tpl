@@ -243,22 +243,24 @@ switch (data.tagUseCase) {
     break;
     
   case "purchase":
-    var items = copyFromDataLayer('transactionProducts');
-    var userId = getUserId().toString();
-    items.forEach(function (item) {
-      var payload = {
-        'userId' : userId,
-        'itemId' : item.sku,
-        'optional' : {
-          'amount' : item.quantity,
-          'price' : item.quantity * makeNumber(item.price),
-          'cascadeCreate' : data.cascadeCreate,
-          }
-        };
+    log('-----purchase-----');
+    if (getPageType() === 'thankYou') {
+      var items = copyFromDataLayer('transactionProducts');
+      var userId = getUserId().toString();
+      items.forEach(function (item) {
+        var payload = {
+          'userId' : userId,
+          'itemId' : item.sku,
+          'optional' : {
+            'amount' : item.quantity,
+            'price' : item.quantity * makeNumber(item.price),
+            'cascadeCreate' : data.cascadeCreate,
+            }
+          };
         log("purchase sending interactions");
         callInWindow('sendInteractions', payload, data.tagUseCase);
       });
-    
+    }
     log('-----purchase--END-----');
     data.gtmOnSuccess();
     break;
@@ -807,6 +809,6 @@ scenarios: []
 
 ___NOTES___
 
-Created on 10. 2. 2023 11:56:27
+Created on 10. 2. 2023 14:39:57
 
 
