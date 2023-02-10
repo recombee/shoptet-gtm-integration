@@ -1,5 +1,7 @@
 homepage: "https://www.recombee.com"
 documentation: "https://docs.recombee.net/shoptet_gtm_integration.html"
 versions:
+  - sha: 61e68c9a361d1fc045632b904c8d933a8addfbc3
+    changeNotes: Fixed support for Shoptet purchase
   - sha: 64ebed3fb2ef770d1f72855e72ea1af58a2ce7ba
-    changenotes: Implementation release
+    changeNotes: Implementation release
