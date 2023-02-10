@@ -1,5 +1,5 @@
 homepage: "https://www.recombee.com"
-documentation: ""
+documentation: "https://docs.recombee.net/shoptet_gtm_integration.html"
 versions:
-  - sha:
-    changenotes:
+  - sha: 64ebed3fb2ef770d1f72855e72ea1af58a2ce7ba
+    changenotes: Implementation release
